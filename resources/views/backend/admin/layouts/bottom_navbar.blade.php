@@ -9,7 +9,8 @@
                        <!--begin::Page Heading-->
                        <div class="d-flex align-items-baseline flex-wrap mr-5">
                            <!--begin::Page Title-->
-                           <h5 class="text-dark font-weight-bold my-1 mr-5">Welcome {{ Str::ucfirst(Auth::guard('admin')->user()->name) }}
+                           <h5 class="text-dark font-weight-bold my-1 mr-5">Welcome
+                               {{ Str::ucfirst(Auth::guard('admin')->user()->name) }}
                            </h5>
                            <!--end::Page Title-->
                        </div>
@@ -18,19 +19,11 @@
                    <!--end::Info-->
                    <!--begin::Toolbar-->
                    <div class="d-flex align-items-center flex-wrap">
-                       <!--begin::Daterange-->
-                       <a href="#" class="btn btn-success font-weight-bolder px-5 mr-3 my-1"
-                           id="kt_dashboard_daterangepicker" data-toggle="tooltip" title="Select dashboard daterange"
-                           data-placement="top">
-                           <span class="opacity-60 font-weight-bolder mr-2"
-                               id="kt_dashboard_daterangepicker_title">Today</span>
-                           <span class="font-weight-bolder" id="kt_dashboard_daterangepicker_date"></span>
-                       </a>
-                       <!--end::Daterange-->
                        <!--begin::Dropdown-->
                        <div class="dropdown dropdown-inline">
-                           <a href="{{ route('admin.user.create') }}" class="btn btn-success font-weight-bolder px-5 mr-3 my-1"
-                               aria-haspopup="true" aria-expanded="false">
+                           <a href="{{ route('admin.user.create') }}"
+                               class="btn btn-success font-weight-bolder px-5 mr-3 my-1" aria-haspopup="true"
+                               aria-expanded="false">
                                <span class="svg-icon svg-icon-md">
                                    <!--begin::Svg Icon | path:/keen/theme/demo6/dist/assets/media/svg/icons/Communication/Add-user.svg-->
                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -53,8 +46,9 @@
                        <!--end::Dropdown-->
                        <!--begin::Dropdown-->
                        <div class="dropdown dropdown-inline">
-                           <a href="{{ route('admin.sponsor.create') }}" class="btn btn-success font-weight-bolder px-5 mr-3 my-1"
-                               aria-haspopup="true" aria-expanded="false">
+                           <a href="{{ route('admin.sponsor.create') }}"
+                               class="btn btn-success font-weight-bolder px-5 mr-3 my-1" aria-haspopup="true"
+                               aria-expanded="false">
                                <span class="svg-icon svg-icon-md">
                                    <!--begin::Svg Icon | path:/keen/theme/demo6/dist/assets/media/svg/icons/Communication/Add-user.svg-->
                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -97,6 +91,31 @@
                                    </svg>
                                    <!--end::Svg Icon-->
                                </span>Add An Event</a>
+                       </div>
+                       <!--end::Dropdown-->
+
+                       <!--begin::Dropdown-->
+                       <div class="dropdown dropdown-inline">
+                           <a href="{{ route('admin.broker.create') }}"
+                               class="btn btn-success font-weight-bolder px-5 px-5 my-1 mx-3" aria-haspopup="true"
+                               aria-expanded="false">
+                               <span class="svg-icon svg-icon-md">
+                                   <!--begin::Svg Icon | path:/keen/theme/demo6/dist/assets/media/svg/icons/Files/File.svg-->
+                                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                       width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                           <polygon points="0 0 24 0 24 24 0 24" />
+                                           <path
+                                               d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z"
+                                               fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                           <rect fill="#000000" x="6" y="11" width="9"
+                                               height="2" rx="1" />
+                                           <rect fill="#000000" x="6" y="15" width="5"
+                                               height="2" rx="1" />
+                                       </g>
+                                   </svg>
+                                   <!--end::Svg Icon-->
+                               </span>Add A Broker</a>
                        </div>
                        <!--end::Dropdown-->
                    </div>

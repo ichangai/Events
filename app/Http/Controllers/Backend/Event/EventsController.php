@@ -62,8 +62,9 @@ class EventsController extends Controller
             "category_id" => $request->category_id,
             "image" => $imageUrl,
         ]);
+
         if($status){
-            return redirect()->route('admin.event.index')->with('success', 'You have successfully created an event');
+            return redirect()->route('admin.event.index')->with('success', 'You have successfully updated an event');
         }else{
             return back()->withErrors("error", "Something went wrong");
         }
@@ -96,8 +97,29 @@ class EventsController extends Controller
             ]);
     
             $data = $request->all();
+
+            // return $request->input('image');
+            
+            $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                'folder' => 'ForexArena Events'
+            ])->getSecurePath();
+
     
-            $status = $event->fill($data)->save();
+            $status = $event->fill([
+                "name" => $request->name,
+                "location" => $request->location,
+                "start_time" => $request->start_time,
+                "end_time" => $request->end_time,
+                "host" => $request->host,
+                "amount" => $request->amount,
+                "summary" => $request->summary,
+                "start_date" => $request->start_date,
+                "end_date" => $request->end_date,
+                "type" => $request->type,
+                "timeline" => $request->timeline,
+                "category_id" => $request->category_id,
+                "image" => $imageUrl,
+            ])->save();
     
             if($status){
                 return redirect()->route('admin.event.index')->with('success', 'Successfully updated the event');

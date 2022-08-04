@@ -24,6 +24,7 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('backend/styles/upload_img.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/styles/edit.css') }}">
     @yield('styles')
 
     <style></style>

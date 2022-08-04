@@ -1,225 +1,133 @@
-            <!-- Team Section Start -->
-            <div class="rs-team style5 pt-120 md-pt-80" style="padding-bottom: 200px;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 mb-65"
-                        >
-                            <div class="team-item">
-                                <div class="team-inner-wrap">
-                                    <div class="images-wrap">
-                                        <svg x="0px" y="0px" width="100%" height="100%" viewBox="87.5 87.5 65 73" xml:space="preserve">
-                                            <defs>
-                                                <pattern id="bias-1684" height="100%" width="100%" patternContentUnits="objectBoundingBox" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
-                                                    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="{{ asset('frontend/assets/images/team/1.jpg') }}"></image>
-                                                </pattern> 
-                                            </defs>
-                                            <path fill="url(#bias-1684)" d="M122.6,159.883c-1.431,0.822-3.77,0.822-5.201,0l-27.298-15.701c-1.431-0.822-2.601-2.84-2.601-4.483v-31.397 c0-1.647,1.17-3.662,2.601-4.484l27.298-15.7c1.431-0.823,3.77-0.823,5.201,0l27.301,15.7c1.431,0.822,2.6,2.837,2.6,4.484v31.397 c0,1.644-1.169,3.661-2.6,4.483L122.6,159.883z"></path>
-                                        </svg>
-                                        <div class="normal-text">
-                                            <h3 class="team-name">
-                                                <a href="speaker-single.html">Michel Holding</a>
-                                            </h3>
-                                            <span class="team-title">Broker One</span>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <h3 class="title-name"><a href="speaker-single.html">Michel Holding</a></h3>
-                                                <div class="team-title">Broker One</div>
-                                                <ul class="social-icons">
-                                                   <li><a href="#" style="color:white">Excellent</a></li>
-                                                   <li><a href="#" style="color:white">Good</a></li>
-                                                   <li><a href="#" style="color:white">Average</a></li>
-                                                   <li><a href="#" style="color:white">Not good</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<!-- Team Start -->
+    <div id="rs-team" class="rs-team style3 pt-120 md-pt-80" style="padding-bottom:100px;">
+        <div class="container">
+            <div class="row">
+                @foreach ($brokers  as $broker)
+                    <div class="col-lg-4 col-md-6 mb-30">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <a href="#"><img
+                                        src="{{ $broker->image }}" alt="" style="width: 400px; height: 300px; object-fit:cover; border-radius: 15px;"></a>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-65">
-                            <div class="team-item">
-                                <div class="team-inner-wrap">
-                                    <div class="images-wrap">
-                                        <svg x="0px" y="0px" width="100%" height="100%" viewBox="87.5 87.5 65 73" xml:space="preserve">
-                                            <defs>
-                                                <pattern id="bias-1685" height="100%" width="100%" patternContentUnits="objectBoundingBox" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
-                                                    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="{{ asset('frontend/assets/images/team/2.jpg') }}"></image>
-                                                </pattern> 
-                                            </defs>
-                                            <path fill="url(#bias-1685)" d="M122.6,159.883c-1.431,0.822-3.77,0.822-5.201,0l-27.298-15.701c-1.431-0.822-2.601-2.84-2.601-4.483v-31.397 c0-1.647,1.17-3.662,2.601-4.484l27.298-15.7c1.431-0.823,3.77-0.823,5.201,0l27.301,15.7c1.431,0.822,2.6,2.837,2.6,4.484v31.397 c0,1.644-1.169,3.661-2.6,4.483L122.6,159.883z"></path>
-                                        </svg>
-                                        <div class="normal-text">
-                                            <h3 class="team-name">
-                                                <a href="speaker-single.html">Mila Kunis</a>
-                                            </h3>
-                                            <span class="team-title">Broker Two</span>
-                                        </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <div class="name">
+                                        <a href="speaker-single.html">{{ $broker->name }}</a>
                                     </div>
-                                    <div class="team-content">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <h3 class="title-name"><a href="speaker-single.html">Mila Kunis</a></h3>
-                                                <div class="team-title">Broker Two</div>
-                                                <ul class="social-icons">
-                                                   <li><a href="#" style="color:white">Excellent</a></li>
-                                                   <li><a href="#" style="color:white">Good</a></li>
-                                                   <li><a href="#" style="color:white">Average</a></li>
-                                                   <li><a href="#" style="color:white">Not good</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <span class="post" style="text-transform: lowercase;">{{ $broker->email }}</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-65">
-                            <div class="team-item">
-                                <div class="team-inner-wrap">
-                                    <div class="images-wrap">
-                                        <svg x="0px" y="0px" width="100%" height="100%" viewBox="87.5 87.5 65 73" xml:space="preserve">
-                                            <defs>
-                                                <pattern id="bias-1686" height="100%" width="100%" patternContentUnits="objectBoundingBox" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
-                                                    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="{{ asset('frontend/assets/images/team/3.jpg') }}"></image>
-                                                </pattern> 
-                                            </defs>
-                                            <path fill="url(#bias-1686)" d="M122.6,159.883c-1.431,0.822-3.77,0.822-5.201,0l-27.298-15.701c-1.431-0.822-2.601-2.84-2.601-4.483v-31.397 c0-1.647,1.17-3.662,2.601-4.484l27.298-15.7c1.431-0.823,3.77-0.823,5.201,0l27.301,15.7c1.431,0.822,2.6,2.837,2.6,4.484v31.397 c0,1.644-1.169,3.661-2.6,4.483L122.6,159.883z"></path>
-                                        </svg>
-                                        <div class="normal-text">
-                                            <h3 class="team-name">
-                                                <a href="speaker-single.html">Odette Annable</a>
-                                            </h3>
-                                            <span class="team-title">Broker Three</span>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <h3 class="title-name"><a href="speaker-single.html">Odette Annable</a></h3>
-                                                <div class="team-title">Broker Three</div>
-                                                <ul class="social-icons">
-                                                   <li><a href="#" style="color:white">Excellent</a></li>
-                                                   <li><a href="#" style="color:white">Good</a></li>
-                                                   <li><a href="#" style="color:white">Average</a></li>
-                                                   <li><a href="#" style="color:white">Not good</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 md-mb-65">
-                            <div class="team-item">
-                                <div class="team-inner-wrap">
-                                    <div class="images-wrap">
-                                        <svg x="0px" y="0px" width="100%" height="100%" viewBox="87.5 87.5 65 73" xml:space="preserve">
-                                            <defs>
-                                                <pattern id="bias-1687" height="100%" width="100%" patternContentUnits="objectBoundingBox" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
-                                                    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="{{ asset('frontend/assets/images/team/4.jpg') }}"></image>
-                                                </pattern> 
-                                            </defs>
-                                            <path fill="url(#bias-1687)" d="M122.6,159.883c-1.431,0.822-3.77,0.822-5.201,0l-27.298-15.701c-1.431-0.822-2.601-2.84-2.601-4.483v-31.397 c0-1.647,1.17-3.662,2.601-4.484l27.298-15.7c1.431-0.823,3.77-0.823,5.201,0l27.301,15.7c1.431,0.822,2.6,2.837,2.6,4.484v31.397 c0,1.644-1.169,3.661-2.6,4.483L122.6,159.883z"></path>
-                                        </svg>
-                                        <div class="normal-text">
-                                            <h3 class="team-name">
-                                                <a href="speaker-single.html">Adam Sandler</a>
-                                            </h3>
-                                            <span class="team-title"> Broker Four</span>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <h3 class="title-name"><a href="speaker-single.html">Adam Sandler</a></h3>
-                                                <div class="team-title">Broker Four</div>
-                                                <ul class="social-icons">
-                                                   <li><a href="#" style="color:white">Excellent</a></li>
-                                                   <li><a href="#" style="color:white">Good</a></li>
-                                                   <li><a href="#" style="color:white">Average</a></li>
-                                                   <li><a href="#" style="color:white">Not good</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 sm-mb-65">
-                            <div class="team-item">
-                                <div class="team-inner-wrap">
-                                    <div class="images-wrap">
-                                        <svg x="0px" y="0px" width="100%" height="100%" viewBox="87.5 87.5 65 73" xml:space="preserve">
-                                            <defs>
-                                                <pattern id="bias-1688" height="100%" width="100%" patternContentUnits="objectBoundingBox" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
-                                                    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="{{ asset('frontend/assets/images/team/5.jpg') }}"></image>
-                                                </pattern> 
-                                            </defs>
-                                            <path fill="url(#bias-1688)" d="M122.6,159.883c-1.431,0.822-3.77,0.822-5.201,0l-27.298-15.701c-1.431-0.822-2.601-2.84-2.601-4.483v-31.397 c0-1.647,1.17-3.662,2.601-4.484l27.298-15.7c1.431-0.823,3.77-0.823,5.201,0l27.301,15.7c1.431,0.822,2.6,2.837,2.6,4.484v31.397 c0,1.644-1.169,3.661-2.6,4.483L122.6,159.883z"></path>
-                                        </svg>
-                                        <div class="normal-text">
-                                            <h3 class="team-name">
-                                                <a href="speaker-single.html"> Saoirse Ronan</a>
-                                            </h3>
-                                            <span class="team-title">Broker Five</span>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <h3 class="title-name"><a href="speaker-single.html">Saoirse Ronan</a></h3>
-                                                <div class="team-title">Broker Five</div>
-                                                <ul class="social-icons">
-                                                   <li><a href="#" style="color:white">Excellent</a></li>
-                                                   <li><a href="#" style="color:white">Good</a></li>
-                                                   <li><a href="#" style="color:white">Average</a></li>
-                                                   <li><a href="#" style="color:white">Not good</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="team-item">
-                                <div class="team-inner-wrap">
-                                    <div class="images-wrap">
-                                        <svg x="0px" y="0px" width="100%" height="100%" viewBox="87.5 87.5 65 73" xml:space="preserve">
-                                            <defs>
-                                                <pattern id="bias-1689" height="100%" width="100%" patternContentUnits="objectBoundingBox" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice">
-                                                    <image height="1" width="1" preserveAspectRatio="xMidYMid slice" xlink:href="{{ asset('frontend/assets/images/team/6.jpg') }}"></image>
-                                                </pattern> 
-                                            </defs>
-                                            <path fill="url(#bias-1689)" d="M122.6,159.883c-1.431,0.822-3.77,0.822-5.201,0l-27.298-15.701c-1.431-0.822-2.601-2.84-2.601-4.483v-31.397 c0-1.647,1.17-3.662,2.601-4.484l27.298-15.7c1.431-0.823,3.77-0.823,5.201,0l27.301,15.7c1.431,0.822,2.6,2.837,2.6,4.484v31.397 c0,1.644-1.169,3.661-2.6,4.483L122.6,159.883z"></path>
-                                        </svg>
-                                        <div class="normal-text">
-                                            <h3 class="team-name">
-                                                <a href="speaker-single.html">Eva Green</a>
-                                            </h3>
-                                            <span class="team-title">Broker Six</span>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <h3 class="title-name"><a href="speaker-single.html">Eva Green</a></h3>
-                                                <div class="team-title">Broker Six</div>
-                                                <ul class="social-icons">
-                                                   <li><a href="#" style="color:white">Excellent</a></li>
-                                                   <li><a href="#" style="color:white">Good</a></li>
-                                                   <li><a href="#" style="color:white">Average</a></li>
-                                                   <li><a href="#" style="color:white">Not good</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ul class="social-icon" style="width: 400px;">
+                                    @if(!$voter_email_exists)
+                                        <button class="btn btn-success mr-3" style="outline: none; border:none; padding: 5px 40px;"
+                                        id="vote"  data-type="upvote"  data-broker="{{ $broker->id }}" data-email="{{ Session::get('voter_email') }}"
+                                        data-event="{{ Session::get('event_id') }}"
+                                        >Vote</button>
+                                        {{-- <button class="btn btn-sm btn-danger" style="outline: none; border:none;"
+                                        id="vote" data-type="downvote" data-broker="{{ $broker->id }}"
+                                        >Down Vote</button> --}}
+                                    @else
+                                         <button class="btn btn-success mr-3" style="outline: none; border:none; padding: 5px 40px;"
+                                        disabled
+                                        > You Voted</button>                                  
+                                    @endif
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
-            <!-- Team Section Start -->
+            @if($voter_email_exists)
+            <div class="text-center" style="margin: 60px 0;">
+                 <form action="{{ route('change', $vote->id) }}" method="post">
+                    @csrf @method('delete') <a type="submit"
+                        class="btn btn-danger btn-xl changeVote" style="padding: 20px; 50px; "
+                        data-id="{{ $vote->id }}">Change My Vote</a> </form>
+            </div>
+            @else
+            @endif
+        </div>
+    </div>
+<!-- Team end -->
+ 
+{{-- style="padding: 10px; 40px; outline: none; border: none; border-radius:10px; color: white;" --}}
+
+
+@section('scripts')
+
+<script>
+    $(document).on('click', '#vote', function() {
+        var _broker = $(this).data('broker');
+        var _type = $(this).data('type');
+        var _email = $(this).data('email');
+        var _event = $(this).data('event');
+        var vm = $(this);        
+
+            $.ajax({
+            url: '{{ route('save.votes') }}',
+            type: "post",
+            dataType: 'json',
+            data: {
+                broker: _broker,
+                type: _type,
+                email: _email,
+                event: _event,
+                _token: "{{ csrf_token() }}"
+            },
+            beforeSend: function() {
+                vm.addClass('disabled');
+            },
+            success: function(res) {
+                if (res.bool == true) {
+                    vm.addClass('disabled');
+                    voteBtn = $('[id="vote"]');
+                    voteBtn.addClass('disabled');
+                    voteBtn.text('You Voted');
+                    vm.removeAttr('id');
+                    var _prevCount = $("." + _type + "-count").text();
+                    _prevCount++;
+                    $("." + _type + "-count").text(_prevCount);
+                // vm.addClass('disabled');
+                swal({
+                    title: "Success",
+                    text: "You have successfully voted. Thank you!",
+                    icon: "success",
+                    button: "ok!",
+                });
+            }
+            }
+        })
+    })
+</script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('.changeVote').click(function(e) {
+            var form = $(this).closest('form');
+            var dataId = $(this).data('id');
+            e.preventDefault();
+            swal({
+                    title: "Are you sure?",
+                    text: "You want to change your vote!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        form.submit();
+                        swal(" You can now vote again!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Your vote has not been changed. Thank you!");
+                    }
+                });
+        });
+    </script>
+
+@endsection

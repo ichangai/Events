@@ -13,6 +13,7 @@
 
 const src = img.getAttribute('src')
 
+
     defaultBtn.addEventListener("change", function(e){
         e.preventDefault();
         const file = this.files[0];

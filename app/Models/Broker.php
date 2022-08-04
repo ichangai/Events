@@ -12,5 +12,14 @@ class Broker extends Model
         "event_id",
         "name",
         "email",
+        "image",
     ];
+
+    public function upvotes(){
+        return $this->hasMany(Vote::class)->sum('upvote');
+    }
+
+    public function downvote(){
+        return $this->hasMany(Vote::class)->sum('downvote');
+    }
 }

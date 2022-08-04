@@ -24,7 +24,6 @@
                                             <!--begin::Pic-->
                                             <div class="d-flex flex-shrink-0 mr-5">
                                                 <div>
-                                                    {{-- <img src="{{ asset('storage/images/'.$category->image) }}" --}}
                                                     <img src="{{$category->image}}"
                                                         alt="image"
                                                         style="width: 200px; height: 100px; object-fit: cover;" />

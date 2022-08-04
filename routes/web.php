@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\Auth\AuthController;
 use App\Http\Controllers\Backend\Sponsor\SponsorController;
 use App\Http\Controllers\Backend\Category\CategoryController;
 use App\Http\Controllers\Broker\BrokerController;
+use App\Http\Controllers\Frontend\Vote\VoteController;
 use App\Http\Controllers\Voter\VoterController;
 
 /*
@@ -70,6 +71,9 @@ Route::get('create/brokers', [BrokerController::class, 'create'])->name('brokers
 
 
 Route::post('voter/signup', [VoterController::class, 'store'])->name('voter.signup');
+Route::post('vote/', [VoteController::class, 'save_votes'])->name('save.votes');
+Route::delete('change/vote/{id}', [VoteController::class, 'change'])->name('change');
+
 
 Route::prefix('user')->name('user.')->group(function () {
 
@@ -133,10 +137,24 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::patch('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::delete('/delete/category/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
 
+        // Brokers
+        Route::get('/broker/create', [BrokerController::class, 'create'])->name('broker.create');
+        Route::post('/broker/store', [BrokerController::class, 'store'])->name('broker.store');
+        Route::get('/brokers', [BrokerController::class, 'index'])->name('broker.index');
+        Route::get('/broker/{id}', [BrokerController::class, 'edit'])->name('broker.edit');
+        Route::patch('/broker/update/{id}', [BrokerController::class, 'update'])->name('broker.update');
+        Route::delete('/delete/broker/{id}', [BrokerController::class, 'destroy'])->name('broker.delete');
+
     //Sponsors Routes
     Route::get('/sponsor/create', [SponsorController::class, 'create'])->name('sponsor.create');
     Route::post('/sponsor/store', [SponsorController::class, 'store'])->name('sponsor.store');
     Route::get('/sponsors', [SponsorController::class, 'index'])->name('sponsors.index');
+    Route::patch('/sponsors/update/{id}', [SponsorController::class, 'update'])->name('sponsors.update');
+    Route::get('/edit/{id}', [SponsorController::class, 'edit'])->name('sponsors.edit');
+    Route::delete('/delete/sponsor/{id}', [SponsorController::class, 'destroy'])->name('sponsor.delete');
+
+    
+
     });
 
 });

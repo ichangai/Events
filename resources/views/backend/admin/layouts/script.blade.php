@@ -16,7 +16,7 @@
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="{{ asset('backend/assets/js/pages/features/miscellaneous/sweetalert21036.js') }}"></script>
 		<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-
+		<script src="{{ asset('backend/scripts/upload_edit.js') }}"></script>
 		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 		@yield('scripts')
 

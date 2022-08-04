@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->string('image')->nullable();
+            $table->enum('status', ['approved','pending','dissaproved'])->nullable();
             $table->enum('level', ['platinum', 'gold', 'silver'])->nullable();
             $table->mediumText('message')->nullable();
             $table->timestamps();

@@ -13,6 +13,8 @@ class Sponsor extends Model
         'email',
         'phone',
         'level',
+        'status',
+        'image',
         'message',
     ];
 }

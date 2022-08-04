@@ -42,9 +42,9 @@ class HomeController extends Controller
 
       // $competitions = Event::where('slug', 'competition')->get();
 
-     $plat_sponsors = Sponsor::where('level', 'platinum')->get();
-     $gold_sponsors = Sponsor::where('level', 'gold')->get();
-     $silver_sponsors = Sponsor::where('level', 'silver')->get();
+     $plat_sponsors = Sponsor::where('level', 'platinum')->where('status', 'approved')->get();
+     $gold_sponsors = Sponsor::where('level', 'gold')->where('status', 'approved')->get();
+     $silver_sponsors = Sponsor::where('level', 'silver')->where('status', 'approved')->get();
 
       return view("frontend.pages.home", 
       compact(

@@ -30,11 +30,31 @@
                                     <h5 class="text-dark font-weight-bold mb-10">Sponsor Details:</h5>
 
                                     <!--begin::Group-->
+                                    <div class="upload_image_container">
+                                        <div className="upload">
+                                            <div class="upload_img_wrapper">
+                                                <div class="preview_image">
+                                                    <img id="img_preview">
+                                                </div>
+                                                <div class="content">
+                                                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                                                    <div class="text">No logo chosen, yet! </div>
+                                                </div>
+                                                <div id="cancel-btn"><i class="fas fa-times"></i></div>
+                                                <div class="file-name">File name here</div>
+                                            </div>
+                                            <input id="default-btn" type="file" name="image">
+                                            <button id="custom-btn" onclick="defaultBtnActive()">Choose a Logo</button>
+                                        </div>
+                                    </div>
+                                    <!--end::Group-->
+
+                                    <!--begin::Group-->
                                     <div class="form-group row" style="margin: 50px 0">
                                         <label class="col-xl-3 col-lg-3 col-form-label">Name</label>
                                         <div class="col-lg-9 col-xl-9">
                                             <input class="form-control form-control-solid form-control-lg" name="name"
-                                                type="text" placeholder="Name" />
+                                                type="text" placeholder="Name" required />
                                         </div>
                                     </div>
                                     <!--end::Group-->
@@ -44,7 +64,7 @@
                                         <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                         <div class="col-lg-9 col-xl-9">
                                             <input class="form-control form-control-solid form-control-lg" name="phone"
-                                                type="text" placeholder="Phone" />
+                                                type="text" placeholder="Phone" required />
                                         </div>
                                     </div>
                                     <!--end::Group-->
@@ -55,21 +75,15 @@
                                         <label class="col-xl-3 col-lg-3 col-form-label">Email</label>
                                         <div class="col-lg-9 col-xl-9">
                                             <input class="form-control form-control-solid form-control-lg" name="email"
-                                                type="text" placeholder="Email" />
+                                                type="text" placeholder="Email" required />
                                         </div>
                                     </div>
                                     <!--end::Group-->
-
 
                                     <!--begin::Group-->
-                                    <div class="form-group row" style="margin: 50px 0">
-                                        <label class="col-xl-3 col-lg-3 col-form-label">Image</label>
-                                        <div class="col-lg-9 col-xl-9">
-                                            <input class="form-control form-control-solid form-control-lg" name="image"
-                                                type="file" />
-                                        </div>
-                                    </div>
+                                        <input type="text" name="status" value="approved" hidden>
                                     <!--end::Group-->
+                                    
 
                                     <!--begin::Group-->
                                     <div class="form-group" style="display: flex; justify-content: space-between;">

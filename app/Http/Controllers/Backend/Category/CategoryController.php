@@ -35,6 +35,7 @@ class CategoryController extends Controller
         
         $title = $request->input('title');
         $summary = $request->input('summary');
+
         
         // cloudinary
         $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
@@ -87,7 +88,22 @@ class CategoryController extends Controller
             }
             $data['slug'] = $slug;
 
-            $status = $category->fill($data)->save();
+            $title = $request->input('title');
+            $summary = $request->input('summary');
+            //  return $request->file('image');
+
+            
+            // cloudinary
+            $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                'folder' => 'ForexArena Category'
+            ])->getSecurePath();
+
+            $status = $category->fill([
+                "title" => $title,
+                "image" => $imageUrl,
+                "summary" => $summary,
+                "slug" => $slug
+            ])->save();
 
             if ($status) {
                 return redirect()->route('admin.category.index')->with('success', 'Successfully created category');

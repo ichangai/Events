@@ -155,6 +155,38 @@
                             </ul>
                         </div>
                     </li>
+
+                    <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
+                        <a href="javascript:;" class="menu-link menu-toggle">
+                            <span class="menu-text">Brokers</span>
+                            <span class="menu-desc"></span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="menu-submenu menu-submenu-classic menu-submenu-left">
+                            <ul class="menu-subnav">
+                                <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
+                                    <li class="menu-item" aria-haspopup="true">
+                                        <a href="{{ route('admin.broker.create') }}" class="menu-link">
+                                            <span style="">
+                                                <i class="fas fa-user text-success mr-5"></i>
+                                            </span>
+                                            <span class="menu-text">Create a Broker</span>
+                                        </a>
+                                    </li>
+                                </li>
+                                <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
+                                  <li class="menu-item" aria-haspopup="true">
+                                    <a href="" class="menu-link">
+                                       <span style="{{ route('admin.broker.index') }}">
+                                         <i class="fas fa-users text-success mr-5"></i>
+                                       </span>
+                                       <span class="menu-text">View all Brokers</span>
+                                    </a>
+                                  </li>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
                 <!--end::Header Nav-->
             </div>

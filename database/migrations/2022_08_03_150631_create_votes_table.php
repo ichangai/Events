@@ -13,19 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('brokers')) {
-        Schema::create('brokers', function (Blueprint $table) {
+        Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("event_id")->nullable();
-            $table->string("name")->nullable();
-            $table->string("email")->nullable();
-            $table->string("image")->nullable();
+            $table->integer('broker_id');
+            $table->string('voter_email');
+            $table->smallInteger('upvote')->default(0);
+            $table->smallInteger('downvote')->default(0);
             $table->timestamps();
-
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
         });
-     }
     }
+
     /**
      * Reverse the migrations.
      *
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brokers');
+        Schema::dropIfExists('votes');
     }
 };

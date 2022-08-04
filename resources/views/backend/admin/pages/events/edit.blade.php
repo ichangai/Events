@@ -26,34 +26,27 @@
             @endif;
 
             <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
-                <div class="col-xl-12 col-xxl-10">
+                <div class="col-xl-12 col-xxl-10" 
+                enctype="multipart/form-data">
                     <!--begin::Wizard Form-->
                     <form class="form" method="POST" 
                     action="{{ route('admin.event.update', $event->id) }}" 
-                    onsubmit="e.preventDefault()" >
+                    enctype="multipart/form-data">
                         @csrf
                         @method('patch')
                         <div class="row justify-content-center">
-                            <div class="col-xl-9">
+                            <div class="col-xl-12">
                                 <!--begin::Wizard Step 1-->
                                 <div class="my-5 step">
                                     <h5 class="text-dark font-weight-bold mb-10">Event Details:</h5>
                                     <!--begin::Group-->
-                                    <div class="upload_image_container">
-                                        <div className="upload">
-                                            <div class="upload_img_wrapper">
-                                                <div class="preview_image">
-                                                    <img src="{{ $event->image }}" id="img_preview">
-                                                </div>
-                                                <div class="content">
-                                                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                                                    <div class="text">No file chosen, yet! </div>
-                                                </div>
-                                                <div id="cancel-btn"><i class="fas fa-times"></i></div>
-                                                <div class="file-name">File name here</div>
+                                    <div class="upload_edit_wrapper">
+                                        <div class="upload-box">
+                                            <div class="upload-img">
+                                                <img src="{{ $event->image }}" alt="">
                                             </div>
-                                            <input id="default-btn" type="file" name="image" value="{{ $event->image }}">
-                                            <button id="custom-btn" onclick="e.preventDefault(); defaultBtnActive();">Choose a file</button>
+                                            <label for="upload-input" class="upload-label">Update Image</label>
+                                            <input type="file" name="image" id="upload-input">
                                         </div>
                                     </div>
                                     <!--end::Group-->
@@ -188,13 +181,6 @@
                                             </option>
                                         </select>
                                     </div>
-
-                                    {{-- <div class="form-group row mt-5">
-                                        <label class="col-xl-3 col-lg-3 col-form-label">Summary</label>
-                                        <div class="col-lg-9 col-xl-9">
-                                            <textarea name="summary" rows="6" cols="60"></textarea>
-                                        </div>
-                                    </div> --}}
 
                                 </div>
                             </div>

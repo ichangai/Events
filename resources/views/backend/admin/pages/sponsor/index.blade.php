@@ -23,8 +23,12 @@
                         <!--begin::Container-->
                         <div class="">
                             <!--begin::Image-->
-                            <div class="bgi-no-repeat bgi-size-cover rounded"
-                                style="background-image: url({{ $sponsor->image }}); height: 200px; width: 100%;"></div>
+                            {{-- <div class="bgi-no-repeat bgi-size-cover rounded"
+                                style="background-image: url({{ $sponsor->image }}); height: 200px; width: 100%;"></div> --}}
+
+                                <img src="{{ $sponsor->image }}"
+                                alt="image"
+                                style="width: 100%; height: 200px; object-fit: contain;" />
                             <!--end::Image-->
                             <!--begin::Location-->
                             <h4 class="text-dark-75 text-hover-primary font-weight-bold pt-6" style="font-size: 14px;">Name:
@@ -45,7 +49,7 @@
                             <div class="pt-2"
                                 style="float: left; display: flex; justify-content: space-between; align-items:center;">
                                 <a href="" class="btn btn-sm btn-primary font-weight-bolder py-2 mr-4">Read More</a>
-                                <a href="{{ route('admin.sponsor.edit', $sponsor->id) }}"
+                                <a href="{{ route('admin.sponsors.edit', $sponsor->id) }}"
                                     class="btn btn-sm btn-primary font-weight-bolder py-2 mr-4">Edit</a>
                                 <form action="{{ route('admin.sponsor.delete', $sponsor->id) }}" method="post"> @csrf
                                     @method('delete') <a type="submit"
