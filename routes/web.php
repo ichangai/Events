@@ -39,7 +39,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::post('/ipay_payment', [PaymentController::class, 'payment'])->name('payment');
 
 // user routes
-Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+Route::post('user/store', [UserController::class, 'store'])->name('user.store');
 Route::get('user/logout', [UserController::class, 'userLogout'])->name('user.logout');
 Route::get('user/signin', [UserController::class, 'showPage'])->name('user.signin');
 Route::post('user/signin', [UserController::class, 'userLogin'])->name('user.login');
@@ -63,14 +63,16 @@ Route::post('become_a_sponsor', [SponsorController::class, 'store'])->name('spon
 
 // awards
 Route::get('awards', [SponsorController::class, 'list'])->name('list.awards');
-Route::get('/awards/signup/form', [AwardController::class, 'showAwardForm'])->name('awardForm');
 
 // brokers
 Route::get('brokers/all', [BrokerController::class, 'show'])->name('brokers.list');
 Route::get('create/brokers', [BrokerController::class, 'create'])->name('brokers.create');
 
 
+Route::get('/voters/signup/form', [VoterController::class, 'showRegForm'])->name('showRegForm');
 Route::post('voter/signup', [VoterController::class, 'store'])->name('voter.signup');
+Route::get('voter/login/page', [VoterController::class, 'showLogin'])->name('voter.showLogin');
+Route::post('voter/signin', [VoterController::class, 'signIn'])->name('voter.sign_in');
 Route::post('vote/', [VoteController::class, 'save_votes'])->name('save.votes');
 Route::delete('change/vote/{id}', [VoteController::class, 'change'])->name('change');
 
@@ -159,9 +161,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
 });
 
-Route::group(['prefix' => 'filemanager'], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
+
 
 //TERMS AND CONDITIONS, REFUND AND PRIVACY POLICIES
 Route::get('/privacy_policies', [HomeController::class, 'privacy'])->name('privacy');

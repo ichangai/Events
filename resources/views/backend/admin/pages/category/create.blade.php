@@ -73,3 +73,23 @@
     <!--end::Card-->
 
 @endsection
+
+@section('scripts')
+    <script>
+        @if(session('success'))
+            Swal.fire({
+                title: "Success!",
+                text: "{{ session('success') }}",
+                icon: "success",
+                buttonsStyling: false,
+                confirmButtonText: "Continue!",
+                customClass: {
+                    confirmButton: "btn btn-primary"
+                }
+            });
+        @elseif(session('error'))
+            Swal.fire("Error!", "{{ session('error') }}", "error");
+        @endif
+    </script>
+
+@endsection

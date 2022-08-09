@@ -1,6 +1,5 @@
 @extends('frontend.layouts.master')
 
-
 @section('content')
             <!-- Breadcrumbs Start -->
             <div class="rs-breadcrumbs img3">
@@ -34,19 +33,19 @@
                             <div class="col-lg-12">
                                 <div class="contact-wrap">
                                     <div id="form-messages"></div>
-                                    <form method="post" action="{{ route('voter.signup') }}">
+                                    <form method="post" action="{{ route('voter.sign_in') }}">
                                         @csrf
                                         <fieldset>
                                             <div class="row">
                                                 <input type="text" value="{{ Session::get('event_id') }}" name="event_id" hidden>
-                                                <div class="col-lg-12 col-md-6 col-sm-6 mb-80">
+                                                <div class="col-lg-10 col-md-6 col-sm-6 mb-80">
                                                     <input class="from-control" type="text" name="email" placeholder="Email" required>
                                                 </div>                                           
                                             </div>
                                             <div class="btn-part">                                            
                                                 <div class="form-group mb-0 d-flex align-items-center justify-content-center">
                                                     <div class="submit-btn">
-                                                        <input class="submit" type="submit" value="Continue to Vote">
+                                                        <input class="submit" type="submit" value="Back">
                                                     </div>
                                                     <div class="submit-btn mx-5">
                                                         <input class="submit" type="submit" value="Sign in as a Voter">

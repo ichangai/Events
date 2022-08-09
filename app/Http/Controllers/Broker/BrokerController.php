@@ -42,9 +42,14 @@ class BrokerController extends Controller
         $data = $request->all();
 
         // cloudinary
-        $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
-            'folder' => 'ForexArena Brokers'
-        ])->getSecurePath();
+            // cloudinary
+            if ($request->image == "") {
+               return back()->with("error", "Please upload an image");
+            } else {
+                $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                    'folder' => 'ForexArena Brokers'
+                ])->getSecurePath();
+            }
 
         $status = Broker::create([
             "name" => $request->input('name'),

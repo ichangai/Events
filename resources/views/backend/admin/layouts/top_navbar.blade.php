@@ -176,8 +176,8 @@
                                 </li>
                                 <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
                                   <li class="menu-item" aria-haspopup="true">
-                                    <a href="" class="menu-link">
-                                       <span style="{{ route('admin.broker.index') }}">
+                                    <a href="{{ route('admin.broker.index') }}" class="menu-link">
+                                       <span>
                                          <i class="fas fa-users text-success mr-5"></i>
                                        </span>
                                        <span class="menu-text">View all Brokers</span>

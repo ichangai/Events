@@ -72,17 +72,21 @@ class SponsorController extends Controller
         $data = $request->all();
 
 
-            // cloudinary
-            $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
-                'folder' => 'ForexArena Sponsors'
-            ])->getSecurePath();
-            // dd($uploadedFileUrl);
+                     // cloudinary
+            if ($request->image == "") {
+               return back()->with("error", "Please upload an image");
+            } else {
+                $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                    'folder' => 'ForexArena Sponsors'
+                ])->getSecurePath();
+            }
 
             $status = Sponsor::create([
                 "name" => $request->input('name'),
                 "email" => $request->input('email'),
                 "phone" => $request->input('phone'),
                 "level" => $request->input('level'),
+                "status" => "approved",
                 "image" => $imageUrl,
                 "message" => $request->input('message'),                
             ]);
@@ -97,6 +101,47 @@ class SponsorController extends Controller
     public function edit($id){
         $sponsor = Sponsor::find($id);
         return view('backend.admin.pages.sponsor.edit', compact('sponsor'));
+    }
+    
+    public function update(Request $request, $id)
+    {
+        $sponsor = Sponsor::find($id);
+
+        if($sponsor){
+            $request->validate([
+                "name" => "nullable|string",
+                "email" => "nullable|string",
+                "phone" => "nullable|string",
+                "level" => "nullable|in:platinum,gold,silver",
+                "message" => "nullable",
+            ]);
+
+            $data = $request->all();
+
+            if ($request->image == "") {
+                $imageUrl = $sponsor->image;
+            } else {
+                $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                    'folder' => 'ForexArena Sponsors'
+                ])->getSecurePath();
+            }
+
+            $status = $sponsor->fill([
+                "name" => $request->input('name'),
+                "email" => $request->input('email'),
+                "phone" => $request->input('phone'),
+                "status" => "approved",
+                "image" => $imageUrl,
+                "level" => $request->input('level'),
+                "message" => $request->input('message'),
+            ])->save();
+
+            if ($status) {
+                return redirect()->route('admin.sponsors.index')->with('success', 'You have successfully updated the sponsor');
+            } else {
+                return redirect()->withErrors('error', 'Something went wrong');
+            }
+        }
     }
 
     public function destroy($id)

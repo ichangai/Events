@@ -19,6 +19,23 @@
 		<script src="{{ asset('backend/scripts/upload_edit.js') }}"></script>
 		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 		@yield('scripts')
+		
+        <script>
+            @if(session('success'))
+                Swal.fire({
+                    title: "Success!",
+                    text: "{{ session('success') }}",
+                    icon: "success",
+                    buttonsStyling: false,
+                    confirmButtonText: "Continue!",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                });
+            @elseif(session('error'))
+                Swal.fire("Error!", "{{ session('error') }}", "error");
+            @endif
+        </script>
 
 		<script>
 			$(document).ready(function() {

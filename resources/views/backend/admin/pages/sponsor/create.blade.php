@@ -30,21 +30,13 @@
                                     <h5 class="text-dark font-weight-bold mb-10">Sponsor Details:</h5>
 
                                     <!--begin::Group-->
-                                    <div class="upload_image_container">
-                                        <div className="upload">
-                                            <div class="upload_img_wrapper">
-                                                <div class="preview_image">
-                                                    <img id="img_preview">
-                                                </div>
-                                                <div class="content">
-                                                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                                                    <div class="text">No logo chosen, yet! </div>
-                                                </div>
-                                                <div id="cancel-btn"><i class="fas fa-times"></i></div>
-                                                <div class="file-name">File name here</div>
+                                    <div class="upload_edit_wrapper">
+                                        <div class="upload-box">
+                                            <div class="upload-img">
+                                                <img alt="">
                                             </div>
-                                            <input id="default-btn" type="file" name="image">
-                                            <button id="custom-btn" onclick="defaultBtnActive()">Choose a Logo</button>
+                                            <label for="upload-input" class="upload-label">Upload Image</label>
+                                            <input type="file" name="image" id="upload-input">
                                         </div>
                                     </div>
                                     <!--end::Group-->

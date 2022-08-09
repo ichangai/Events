@@ -6,6 +6,8 @@
 
 @include('frontend.layouts.paymentModal')
 
+@include('frontend.layouts.contactModal')
+
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
 @yield('content')

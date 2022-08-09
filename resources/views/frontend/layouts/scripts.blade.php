@@ -1,10 +1,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-<!-- modernizr js -->
-<script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js" integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="{{ asset('frontend/assets/js/modernizr-2.8.3.min.js') }}"></script>
 <!-- jquery latest version -->
@@ -53,7 +50,7 @@
 
 <script>
     @if (session('success'))
-        Swal.fire({
+        swal({
             position: "top-right",
             icon: "success",
             title: "Success",
@@ -61,9 +58,11 @@
             showConfirmButton: false,
             timer: 2500
         });
-    @else
-        (session('error'))
-        Swal.fire("Error!", "{{ session('error') }}", "error");
+    @else(session('error'))
+        swal({
+            "Error!", 
+        "{{ session('error') }}", 
+        "error"});
     @endif
 </script>
 

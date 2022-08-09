@@ -40,13 +40,13 @@
                                      <div class="input-group mb-2 mr-sm-2">
                                          <input type="text" style="font-family: 'Poppins', sans-serif"
                                              class="form-control" id="inlineFormInputGroupUsername2"
-                                             placeholder="Email" name="email">
+                                             placeholder="Email" name="email" required>
                                          <div class="input-group-prepend">
                                          </div>
                                      </div>
                                      <div class="input-group form-group">
                                          <input type="password" style="font-family: 'Poppins', sans-serif;"
-                                             class="form-control" id="exampleInputPassword1"  placeholder="Password" name="password">
+                                             class="form-control" id="exampleInputPassword1"  placeholder="Password" name="password" required>
                                          <div class="input-group-prepend">
                                          </div>
                                      </div>
@@ -77,7 +77,7 @@
                                      <div class="form-group input-group">
                                          <input type="text" class="form-control"
                                              style="font-family: 'Poppins', sans-serif" id="exampleInputName" name="name"
-                                             placeholder="Full Name">
+                                             placeholder="Full Name" required>
                                          <div class="input-group-prepend">
                                          </div>
                                      </div>
@@ -85,20 +85,20 @@
                                      <div class="form-group input-group mt-5">
                                          <input type="email" style="font-family: 'Poppins', sans-serif"
                                              class="form-control" id="exampleInputEmail2" placeholder="Email" name="email">
-                                         <div class="input-group-prepend">
+                                         <div class="input-group-prepend" required>
                                          </div>
                                      </div>
                                      <div class="form-group input-group mt-5">
                                          <input type="password" style="font-family: 'Poppins', sans-serif"
                                              class="form-control" id="exampleInputPassword2" placeholder="Password" name="password">
-                                         <div class="input-group-prepend">
+                                         <div class="input-group-prepend" required>
                                          </div>
                                      </div>
 
                                      <div class="form-group input-group mt-5">
                                         <input type="text" style="font-family: 'Poppins', sans-serif"
                                             class="form-control" id="exampleInputEmail2" placeholder="phone" name="phone">
-                                        <div class="input-group-prepend">
+                                        <div class="input-group-prepend" required>
                                         </div>
                                     </div>
 

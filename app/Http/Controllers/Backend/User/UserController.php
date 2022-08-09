@@ -55,8 +55,8 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $User = User::findorFail($id);
-        return view('backend.admin.pages.user.edit', compact('user'));
+        $user = User::findorFail($id);
+        return view('backend.admin.pages.users.edit', compact('user'));
     }
 
     public function update(Request $request, $id)
@@ -80,7 +80,7 @@ class UserController extends Controller
             ])->save();
     
             if($status){
-                return redirect()->route('admin.User.index')->with('success', 'Successfully updated the User');
+                return redirect()->route('admin.user.index')->with('success', 'Successfully updated the User');
             } else {
                 return back()->with('error', 'Something went wrong');
             }
@@ -91,11 +91,11 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $User = User::find($id);
-        if($User){
-            $status = $User->delete();
+        $user = User::findorFail($id);
+        if($user){
+            $status = $user->delete();
             if($status){
-                return redirect()->route('admin.user.delete')->with('success', 'Successfully deleted user');
+                return redirect()->route('admin.user.index')->with('success', 'Successfully deleted user');
             }
             else{
                 return back()->with('error', 'Something went wrong');

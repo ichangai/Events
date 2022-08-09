@@ -48,7 +48,7 @@
                                        </div> 
                                     </div>
                                 </div>
-                                @if($event->slug == "awards")
+                                @if(!$event->slug == "awards")
                                     <div class="btn-part mt-35">
                                         <a class="readon btn-text ticket" href="#">
                                             <span>Join This Event</span>
@@ -56,7 +56,7 @@
                                     </div>
                                 @else
                                 <div class="btn-part mt-35">
-                                    <a class="readon btn-text ticket" href="{{ route('awardForm') }}">
+                                    <a class="readon btn-text ticket" href="{{ route('showRegForm') }}">
                                         <span>Vote Now</span>
                                     </a>
                                 </div>

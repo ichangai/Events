@@ -8,6 +8,9 @@
                             <div class="row-table">
                                 <div class="col-cell">
                                     <div class="">
+                                        @php
+                                            $awards = \App\Models\Event::where('category_id', 1)->limit(3)->get();
+                                        @endphp
                                         <div class="main-menu">
                                             <nav class="rs-menu hidden-md">
                                                 <ul class="nav-menu">
@@ -17,43 +20,55 @@
                                                     <li class="menu-item-has-children">
                                                         <a href="#">Awards</a>
                                                         <ul class="sub-menu">
-                                                            <li><a href="#">Africa Forex Awards 2022</a></li>
-                                                            <li><a href="#">East Africa Forex Awards 2022</a></li>
-                                                            <li><a href="#">South Africa Forex Awards 2022</a>
+                                                            @foreach ($awards as $award)
+                                                                <li><a href="{{ route('single.event', $award->id) }}">{{ $award->name }}</a></li>
+                                                            @endforeach
                                                             </li>
                                                         </ul>
                                                     </li>
-
+                                                    @php
+                                                        $compes = \App\Models\Event::where('category_id', 2)->limit(3)->get();
+                                                    @endphp
                                                     <li class="menu-item-has-children">
                                                         <a href="#">Competition</a>
                                                         <ul class="sub-menu">
-                                                            <li><a href="#">Multibank Forex Trading Live
-                                                                    Competition</a></li>
-                                                            <li><a href="#">Forex Trade Mogul Competition</a></li>
+                                                            @foreach ($compes as $compe)
+                                                            <li><a href="{{ route('single.event', $compe->id) }}">{{ $compe->name  }}</a></li>
+                                                            @endforeach
                                                         </ul>
                                                     </li>
-
+                                                    @php
+                                                        $confs = \App\Models\Event::where('category_id', 3)->limit(3)->get();
+                                                    @endphp
                                                     <li class="menu-item-has-children">
                                                         <a href="#">Confrence</a>
                                                         <ul class="sub-menu">
-                                                            <li><a href="#">Forex Trading Conference </a></li>
-                                                            <li><a href="#">Forex Trading Seminars</a></li>
+                                                            @foreach ($confs as $conf)
+                                                             <li><a href="{{ route('single.event', $conf->id) }}">{{ $conf->name  }}</a></li>
+                                                            @endforeach
                                                         </ul>
                                                     </li>
-
+                                                    @php
+                                                        $seminars = \App\Models\Event::where('category_id', 4)->limit(3)->get();
+                                                    @endphp
                                                     <li class="menu-item-has-children">
                                                         <a href="#">Seminar</a>
                                                         <ul class="sub-menu">
-                                                            <li><a href="#">Forex Trading Conference </a></li>
-                                                            <li><a href="#">Forex Trading Seminars</a></li>
+                                                            @foreach ($seminars as $seminar)
+                                                             <li><a href="{{ route('single.event', $seminar->id) }}">{{ $seminar->name  }}</a></li>
+                                                            @endforeach
                                                         </ul>
                                                     </li>
+                                                     @php
+                                                        $expos = \App\Models\Event::where('category_id', 5)->limit(3)->get();
+                                                    @endphp
 
                                                     <li class="menu-item-has-children">
                                                         <a href="#">Expo</a>
                                                         <ul class="sub-menu">
-                                                            <li><a href="#">Forex Trading Expo</a></li>
-                                                            <li><a href="#">Forex Trading University Expo</a></li>
+                                                             @foreach ($expos as $expo)
+                                                             <li><a href="{{ route('single.event', $expo->id) }}">{{ $expo->name  }}</a></li>
+                                                            @endforeach
                                                         </ul>
                                                     </li>
 
@@ -86,7 +101,7 @@
                                                 </li>
                                             @else
                                                 <li class="btn-quote mr-20" data-toggle="modal"
-                                                    data-target=".bd-example-modal-lg">
+                                                    data-target="#contactModal">
                                                     <a href="#" class="quote-button">Contact Us</a>
                                                 </li>
                                                 <li class="btn-quote mr-20">

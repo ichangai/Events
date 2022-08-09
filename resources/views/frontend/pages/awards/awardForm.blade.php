@@ -56,7 +56,9 @@
                                                         <input class="submit" type="submit" value="Continue to Vote">
                                                     </div>
                                                     <div class="submit-btn mx-5">
-                                                        <input class="submit" type="submit" value="Sign in as a Voter">
+                                                        <a class="readon btn-text ticket" href="{{ route('voter.showLogin') }}" style="padding: 0px 20px;">
+                                                            <span >Sign In as Voter</span>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div> 

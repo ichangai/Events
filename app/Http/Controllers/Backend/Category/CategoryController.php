@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryController extends Controller
 {
@@ -37,10 +38,16 @@ class CategoryController extends Controller
         $summary = $request->input('summary');
 
         
-        // cloudinary
-        $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
-            'folder' => 'ForexArena Category'
-        ])->getSecurePath();
+            // cloudinary
+            if ($request->image == "") {
+               return back()->with("error", "Please upload an image");
+            } else {
+                $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                    'folder' => 'ForexArena Category'
+                ])->getSecurePath();
+            }
+
+        
         // dd($uploadedFileUrl);
 
         $status = Category::create([
@@ -94,9 +101,13 @@ class CategoryController extends Controller
 
             
             // cloudinary
-            $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
-                'folder' => 'ForexArena Category'
-            ])->getSecurePath();
+            if ($request->image == "") {
+                $imageUrl = $category->image;
+            } else {
+                $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                    'folder' => 'ForexArena Category'
+                ])->getSecurePath();
+            }
 
             $status = $category->fill([
                 "title" => $title,

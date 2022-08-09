@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Voter;
 use App\Models\Voter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -16,7 +17,7 @@ class VoterController extends Controller
         $email_exist_db = Voter::where('email', $request->email)->exists();
         if(!$email_exist_db ){
             $request->validate([
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:voters', 'exists:voters,voter_email'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:voters'],
                 'name' => ['required', 'string', 'max:255'],
                 'phone' => ['required', 'string', 'max:255'],
             ]);
@@ -39,5 +40,33 @@ class VoterController extends Controller
         }
     //    return $request->all();
 
+    }
+
+    public function showLogin(){
+        return view('frontend.pages.awards.signIn');
+    }
+
+    public function signIn(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email|exists:voters,email',
+        ], [
+            'email.exists' => "This email does not exist in voters table"
+        ]);
+
+        if ($request->email) {
+            Session::put('voter_email', $request->email);
+            //  return Session::get('event_id');
+            Alert::toast('success', 'You have successfully logged in');
+            return redirect()->route('brokers.list')->with('success', 'You have successfully logged in as a voter');
+        }else {
+            Alert::toast('error', 'Invalid email!');
+            return back()->with('error', 'Invalid email!');
+        }
+    }
+
+    public function showRegForm()
+    {
+        return view('frontend.pages.awards.awardForm');
     }
 }

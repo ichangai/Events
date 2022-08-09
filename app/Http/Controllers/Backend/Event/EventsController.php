@@ -42,10 +42,14 @@ class EventsController extends Controller
         ]);
         
         $data = $request->all();
-        $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
-            'folder' => 'ForexArena Events'
-        ])->getSecurePath();
-        // dd($imageUrl);
+                 // cloudinary
+        if ($request->image == "") {
+           return back()->with("error", "Please upload an image");
+        } else {
+            $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                'folder' => 'ForexArena Events'
+            ])->getSecurePath();
+        }
 
         $status = Event::create([
             "name" => $request->name,
@@ -100,9 +104,13 @@ class EventsController extends Controller
 
             // return $request->input('image');
             
-            $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
-                'folder' => 'ForexArena Events'
-            ])->getSecurePath();
+            if ($request->image == "") {
+                $imageUrl = $event->image;
+            } else {
+                $imageUrl = Cloudinary::upload($request->file('image')->getRealPath(), [
+                    'folder' => 'ForexArena Events'
+                ])->getSecurePath();
+            }
 
     
             $status = $event->fill([

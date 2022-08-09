@@ -16,15 +16,12 @@
                                     </div>
                                     <span class="post" style="text-transform: lowercase;">{{ $broker->email }}</span>
                                 </div>
-                                <ul class="social-icon" style="width: 400px;">
+                                <ul class="social-icon" style="width: 400px; padding: 0rem; margin-bottom: 0rem;">
                                     @if(!$voter_email_exists)
-                                        <button class="btn btn-success mr-3" style="outline: none; border:none; padding: 5px 40px;"
+                                        <button class="btn btn-success mr-3" style="outline: none; border:none; padding: 5px 40px; margin-top: 30px;"
                                         id="vote"  data-type="upvote"  data-broker="{{ $broker->id }}" data-email="{{ Session::get('voter_email') }}"
                                         data-event="{{ Session::get('event_id') }}"
                                         >Vote</button>
-                                        {{-- <button class="btn btn-sm btn-danger" style="outline: none; border:none;"
-                                        id="vote" data-type="downvote" data-broker="{{ $broker->id }}"
-                                        >Down Vote</button> --}}
                                     @else
                                          <button class="btn btn-success mr-3" style="outline: none; border:none; padding: 5px 40px;"
                                         disabled
