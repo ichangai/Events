@@ -17,4 +17,3 @@ jobs:
         server: ftp.forextradingacademy.co.ke
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: /forexarena.co.ke/
