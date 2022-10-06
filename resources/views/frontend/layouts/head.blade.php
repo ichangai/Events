@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- favicon -->
         <link rel="apple-touch-icon" href="apple-touch-icon.html">
-        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/images/fav.png') }}">
+        <link rel="shortcut icon" type="image/x-icon" href="">
         <!-- Bootstrap v4.4.1 css -->
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
         <!-- font-awesome css -->
@@ -53,13 +53,13 @@
      {{-- <div class="offwrap"></div> --}}
 
         <!--Preloader start here-->
-        <!-- <div id="pre-load">
+        <div id="pre-load">
            <div id="loader" class="loader">
                <div class="loader-container">
-                   <div class='loader-icon'><img src="" alt="forexarena"></div>
+                   <div class='loader-icon'></div>
                </div>
            </div>              
-       </div> -->
+       </div>
         <!--Preloader area end here-->
     
 		<!-- Main content Start -->

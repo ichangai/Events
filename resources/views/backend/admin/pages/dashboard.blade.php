@@ -27,8 +27,8 @@
                                 </h3>
                             </div>
                             @php
-                                $events = \App\Models\Event::all();
-                                $event_count = $events->count();
+                                $events_no = \App\Models\Event::all();
+                                $event_count = $events_no->count();
                             @endphp
                             <!--end::Header-->
                             <!--begin::Body-->
@@ -193,7 +193,7 @@
                                 <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold pt-8">{{ $event->location }}</h3>
                                 <!--end::Title-->
                                 <!--begin::Text-->
-                                <p class="text-dark-75 font-size-lg font-weight-normal pt-3 mb-4">{{ $event->summary }}.</p>
+                                <p class="text-dark-75 font-size-lg font-weight-normal pt-3 mb-4">{!! html_entity_decode($event->summary) !!}.</p>
                                 <!--end::Text-->
                                 <a href="#" class="btn btn-sm btn-primary font-weight-bolder py-2">Read More</a>
                             </div>

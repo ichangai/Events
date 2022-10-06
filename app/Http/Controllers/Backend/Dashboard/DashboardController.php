@@ -14,7 +14,7 @@ class DashboardController extends Controller
 {
     //
    public function index(){
-    $events = Event::orderBy('id', 'desc')->limit(5)->get();
+    $events = Event::orderBy('id', 'desc')->limit(6)->get();
     $brokers = Broker::orderBy('id', 'desc')->limit(5)->get();
     $voters = Voter::orderBy('id', 'desc')->limit(5)->get();
     $users = User::orderBy('id', 'desc')->limit(5)->get();
