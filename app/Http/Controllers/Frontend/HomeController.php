@@ -35,16 +35,16 @@ class HomeController extends Controller
 
 
       $categories = Category::all();
-      $past_events = Event::where('timeline', 'past')->get();
-      $count_past = Event::where('timeline', 'past')->get()->count();
-      $upcoming_events = Event::where('timeline', 'upcoming')->orderBy('id', 'Desc')->get();
+      $past_events = Event::where('timeline', 'past')->limit(5)->get();
+      $count_past = Event::where('timeline', 'past')->limit(5)->get()->count();
+      $upcoming_events = Event::where('timeline', 'upcoming')->orderBy('id', 'Desc')->limit(5)->get();
       $count = Event::get()->count();
 
-      // $competitions = Event::where('slug', 'competition')->get();
+      // $competitions = Event::where('slug', 'competition')->limit(5)->get();
 
-     $plat_sponsors = Sponsor::where('level', 'platinum')->where('status', 'approved')->get();
-     $gold_sponsors = Sponsor::where('level', 'gold')->where('status', 'approved')->get();
-     $silver_sponsors = Sponsor::where('level', 'silver')->where('status', 'approved')->get();
+     $plat_sponsors = Sponsor::where('level', 'platinum')->where('status', 'approved')->limit(5)->get();
+     $gold_sponsors = Sponsor::where('level', 'gold')->where('status', 'approved')->limit(5)->get();
+     $silver_sponsors = Sponsor::where('level', 'silver')->where('status', 'approved')->limit(5)->get();
 
       return view("frontend.pages.home", 
       compact(

@@ -76,8 +76,8 @@
                             <!--end::Header-->
                             <!--begin::Body-->
                             @php
-                                $broker = \App\Models\Broker::all();
-                                $broker_count = $broker->count();
+                                $broker_no = \App\Models\Broker::all();
+                                $broker_count = $broker_no->count();
                             @endphp
                             <div class="card-toolbar" style="margin-left: 40px;">
                                 <span class=" font-size-h1 text-white" style="font-weight: 600">{{ $broker_count }}</span>
@@ -99,8 +99,8 @@
                             </div>
                             <!--end::Header-->
                             @php
-                                $conf = \App\Models\Event::where('category_id', 3)->get();
-                                $conf = $conf->count();
+                                $conf_no = \App\Models\Event::where('category_id', 3)->get();
+                                $conf = $conf_no->count();
                             @endphp
                             <!--begin::Body-->
                             <div class="card-toolbar" style="margin-left: 40px;">
@@ -122,8 +122,8 @@
                             </div>
                             <!--end::Header-->
                             @php
-                                $compe = \App\Models\Event::where('category_id', 2)->get();
-                                $compe = $compe->count();
+                                $compe_no = \App\Models\Event::where('category_id', 2)->get();
+                                $compe = $compe_no->count();
                             @endphp
                             <!--begin::Body-->
                             <div class="card-toolbar" style="margin-left: 40px;">
@@ -146,8 +146,8 @@
                             <!--end::Header-->
                             <!--begin::Body-->
                              @php
-                                $awards = \App\Models\Event::where('category_id', 1)->get();
-                                $awards = $awards->count();
+                                $awards_no = \App\Models\Event::where('category_id', 1)->get();
+                                $awards = $awards_no->count();
                             @endphp
                             <div class="card-toolbar" style="margin-left: 40px;">
                                 <span class=" font-size-h1 text-white" style="font-weight: 600">{{ $awards }}</span>

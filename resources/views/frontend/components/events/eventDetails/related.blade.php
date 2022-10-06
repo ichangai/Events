@@ -21,12 +21,11 @@
                             </div>
                             <div class="blog-content">
                                <ul class="blog-meta">
-                                   <li class="admin"><i class="fa fa-user-o"></i>admin</li>
-                                   <li class="cat-list"><a href=""> <i class="fa fa-folder"></i>Kisumu</a></li>
+                                   <li class="cat-list"><a href=""> <i class="fa fa-folder"></i>{{ $event->location }}</a></li>
                                </ul>
                                <h3 class="blog-title"><a href="">{{ $event->name }}</a></h3>
                                <div class="blog-button">
-                                   <a href="">
+                                   <a href="{{ route('single.event', $event->id) }}">
                                        <span class="btn-txt">View More</span>
                                        <i class="fa fa fa-chevron-right"></i>
                                    </a>

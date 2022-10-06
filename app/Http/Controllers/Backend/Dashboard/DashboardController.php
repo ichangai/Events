@@ -19,7 +19,7 @@ class DashboardController extends Controller
     $voters = Voter::orderBy('id', 'desc')->limit(5)->get();
     $users = User::orderBy('id', 'desc')->limit(5)->get();
     // $category_name = Category::where($category->id == $event->category_id)->
-
+    
     return view("backend.admin.pages.dashboard", compact('events', 'brokers', 'voters', 'users'));
    }
 }
