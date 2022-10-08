@@ -55,7 +55,10 @@ Route::post('user/password/reset', [AuthController::class, 'resetPassword'])->na
 Route::get('category/{slug}', [CategoryController::class, 'singlecategory'])->name('single.category');
 
 // single event
-Route::get('/event_details/{id}', [EventController::class, 'singleEvent'])->name('single.event');
+Route::get('/event-details/{id}', [EventController::class, 'singleEvent'])->name('single.event');
+
+//Load more events
+Route::post('/load_data', [EventController::class, 'load_data'])->name('loadmore.load_data');
 
 // Sponsor
 Route::get('become_a_sponsor', [SponsorController::class, 'apply'])->name('apply');

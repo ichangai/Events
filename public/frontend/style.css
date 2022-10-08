@@ -2459,8 +2459,8 @@ body .search-modal .close:hover {
     08. Banner Section CSS
 ---------------------------------------*/
 .rs-banner.main-home {
-  background: url(assets/images/banner/style1/banner-bg.jpg);
-  background-position: top center;
+  background: url(assets/images/banner/style3/banner5.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
