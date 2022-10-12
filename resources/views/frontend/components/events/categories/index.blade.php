@@ -10,7 +10,7 @@
                     </div>
                     <div class="row">
                         @forelse($categories as $cat)
-                        <div class="col-lg-4 col-md-6 mb-30"  data-aos="fade-up" data-aos-delay="500">
+                        <div class="col-lg-4 col-md-6 mb-30"  data-aos="fade-up" data-aos-delay="400">
                             <div class="event-item">
                                 <div class="event-wrap">
                                     <div class="mega-bg-color"></div>

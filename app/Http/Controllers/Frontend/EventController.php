@@ -74,9 +74,9 @@ class EventController extends Controller
 
             if (!$data->isEmpty()) {
                 foreach ($data as $event) {
-  
+
                     $output .= '          
-                 <div class="col-lg-6 col-md-6 mb-30" data-aos="fade-up" data-aos-delay="600">
+                 <div class="col-lg-6 col-md-6 mb-30" data-aos="fade-up" data-aos-delay="500">
                     <div class="event-item">
                         <div class="event-wrap">
                              <div class="mega-bg-color purple-bg"></div>
@@ -103,7 +103,7 @@ class EventController extends Controller
                                     </div>
                                     <ul class="specs-btn">
                                         <li>
-                                            <a class="readon regt purple-btn" href="/event-details/'.$event->id.') }}">
+                                            <a class="readon regt purple-btn" href="/event-details/' . $event->id . ') }}">
                                                 <span>View More</span>
                                             </a>
                                         </li>
